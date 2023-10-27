@@ -1,0 +1,13 @@
+services:
+  sample-node-api:
+    image: sample-node-api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    environment:
+      - PORT=5000
+      
+    ports:
+      - 5000:5000
+    
