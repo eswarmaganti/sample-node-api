@@ -9,7 +9,11 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.render("index");
+  try {
+    res.render("index");
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 app.listen(PORT, () => {
